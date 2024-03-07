@@ -1,4 +1,4 @@
-
+# PRAKTIKUM 2 ARUANNE
 
 1a)
 parool on ut
@@ -8,7 +8,34 @@ parool on hack
 parool on hd
 parool on led
 parool on asdf
+programmi kood:
+```
+import string, crypt
+salt = '$6$SomethingHere'
+encrypted = '$6$SomethingHere$L5zuxicIHC90jGVZ9xgoOjUw36DjduwH1nPGJ.uwcgLqCvhlGe6wWp55eojE9jAIXxDbcsmbAKLXuXg2AbKZo0'
 
+for c1 in string.ascii_lowercase:
+    for c2 in string.ascii_lowercase:
+        passwd = c1 + c2
+        if encrypted == crypt.crypt(passwd, salt):
+            print ('parool on: ' + passwd)
+            break
+for c1 in string.ascii_lowercase:
+    for c2 in string.ascii_lowercase:
+        for c3 in string.ascii_lowercase:
+            passwd = c1 + c2 + c3
+            if encrypted == crypt.crypt(passwd, salt):
+                print ('parool on: ' + passwd)
+                break
+for c1 in string.ascii_lowercase:
+    for c2 in string.ascii_lowercase:
+        for c3 in string.ascii_lowercase:
+            for c4 in string.ascii_lowercase:
+                passwd = c1 + c2 + c3 + c4
+                if encrypted == crypt.crypt(passwd, salt):
+                    print ('parool on: ' + passwd)
+                    break
+```
 2)
 anekdoot
 kasutaja
